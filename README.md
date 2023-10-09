@@ -48,24 +48,47 @@ API - https://task-application1.onrender.com/
    
         POST api/tasks/create
   
-  Create a new task.
+     Create a new task.
   
-  Example Request Body:
+     Example Request Body:
   
         {
             "title": "Task Title",
             "description": "Task Description"
         }
 
-2. Read Tasks
+2. Get a list of all tasks.
    
-        GET api/tasks
+         GET api/tasks
 
-Get a list of all tasks.
-GET /api/tasks/:taskId
 
-Get a single task by ID.
-Update a Task
-PUT /api/tasks/:taskId
-Update a task by ID.
-Example Request Body:
+3. Patch a single task by ID.
+   
+   Update a Task
+
+         PUT api/tasks/update/:taskID
+   
+   Update a task by ID.
+   
+   Example Request Body:
+
+         {
+            "title": "Updated Task Title",
+            "description": "Updated Task Description"
+         }
+   
+4. Delete a single Task by ID
+
+      Delete a Task
+
+         DELETE api/tasks/delete/:taskId
+   
+      Delete a task by ID.
+   
+# Error Handling
+
+The API handles validation errors gracefully and returns appropriate error responses when creating a task with an empty title or when updating/deleting tasks that do not exist.
+
+# Contributing
+Contributions are welcome! Please read the Contributing Guidelines for more details.
+
